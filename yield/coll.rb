@@ -1,6 +1,4 @@
 class Coll
-  include Enumerable
-
   def initialize(coll = [])
     @arr = coll
   end
