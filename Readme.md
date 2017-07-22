@@ -138,32 +138,36 @@
 Почти каждый объект, с которым приходится иметь дело в Ruby, имеет метод `methods`, который возвращает список методов объекта. Например:
 
     5.methods
-    [:%, :&, :*, :+, :-, :/, :<, :>, :^, :|, :~, :-@, :**, :<=>, :<<, :>>, :<=, :>=, :==, :===, :[], :inspect, :size, :succ,
-    :to_s, :to_f, :div, :divmod, :fdiv, :modulo, :abs, :magnitude, :zero?, :odd?, :even?, :bit_length, :to_int, :to_i, :next,
-    :upto, :chr, :ord, :integer?, :floor, :ceil, :round, :truncate, :downto, :times, :pred, :to_r, :numerator, :denominator,
-    :rationalize, :gcd, :lcm, :gcdlcm, :+@, :eql?, :singleton_method_added, :coerce, :i, :remainder, :real?, :nonzero?, :step,
-    :positive?, :negative?, :quo, :arg, :rectangular, :rect, :polar, :real, :imaginary, :imag, :abs2, :angle, :phase, :conjugate,
-    :conj, :to_c, :between?, :iterator, :instance_of?, :public_send, :instance_variable_get, :instance_variable_set,
-    :instance_variable_defined?, :remove_instance_variable, :private_methods, :kind_of?, :instance_variables, :tap, :is_a?,
-    :extend, :define_singleton_method, :to_enum, :enum_for, :=~, :!~, :respond_to?, :freeze, :display, :send, :object_id, :method,
-    :public_method, :singleton_method, :nil?, :hash, :class, :singleton_class, :clone, :dup, :itself, :taint, :tainted?, :untaint,
-    :untrust, :trust, :untrusted?, :methods, :protected_methods, :frozen?, :public_methods, :singleton_methods, :!, :!=,
-    :__send__, :equal?, :instance_eval, :instance_exec, :__id__]
+    [:%, :&, :*, :+, :-, :/, :<, :>, :^, :|, :~, :-@, :**, :<=>, :<<, :>>, :<=, :>=, :==, :===, :[],
+     :inspect, :size, :succ, :to_s, :to_f, :div, :divmod, :fdiv, :modulo, :abs, :magnitude, :zero?,
+     :odd?, :even?, :bit_length, :to_int, :to_i, :next, :upto, :chr, :ord, :integer?, :floor, :ceil,
+     :round, :truncate, :downto, :times, :pred, :to_r, :numerator, :denominator, :rationalize, :gcd,
+     :lcm, :gcdlcm, :+@, :eql?, :singleton_method_added, :coerce, :i, :remainder, :real?, :nonzero?,
+     :step, :positive?, :negative?, :quo, :arg, :rectangular, :rect, :polar, :real, :imaginary, :imag,
+     :abs2, :angle, :phase, :conjugate, :conj, :to_c, :between?, :iterator, :instance_of?, :public_send,
+     :instance_variable_get, :instance_variable_set, :instance_variable_defined?,
+     :remove_instance_variable, :private_methods, :kind_of?, :instance_variables, :tap, :is_a?, :extend,
+     :define_singleton_method, :to_enum, :enum_for, :=~, :!~, :respond_to?, :freeze, :display, :send,
+     :object_id, :method, :public_method, :singleton_method, :nil?, :hash, :class, :singleton_class,
+     :clone, :dup, :itself, :taint, :tainted?, :untaint, :untrust, :trust, :untrusted?, :methods,
+     :protected_methods, :frozen?, :public_methods, :singleton_methods, :!, :!=, :__send__, :equal?,
+     :instance_eval, :instance_exec, :__id__]
 
 Полученный массив можно сортировать
 
     5.methods.sort
-    [:!, :!=, :!~, :%, :&, :*, :**, :+, :+@, :-, :-@, :/, :<, :<<, :<=, :<=>, :==, :===, :=~, :>, :>=, :>>, :[], :^, :__id__,
-    :__send__, :abs, :abs2, :angle, :arg, :between?, :bit_length, :ceil, :chr, :class, :clone, :coerce, :conj, :conjugate,
-    :define_singleton_method, :denominator, :display, :div, :divmod, :downto, :dup, :enum_for, :eql?, :equal?, :even?, :extend,
-    :fdiv, :floor, :freeze, :frozen?, :gcd, :gcdlcm, :hash, :i, :imag, :imaginary, :inspect, :instance_eval, :instance_exec,
-    :instance_of?, :instance_variable_defined?, :instance_variable_get, :instance_variable_set, :instance_variables, :integer?,
-    :is_a?, :iterator, :itself, :kind_of?, :lcm, :magnitude, :method, :methods, :modulo, :negative?, :next, :nil?, :nonzero?,
-    :numerator, :object_id, :odd?, :ord, :phase, :polar, :positive?, :pred, :private_methods, :protected_methods, :public_method,
-    :public_methods, :public_send, :quo, :rationalize, :real, :real?, :rect, :rectangular, :remainder, :remove_instance_variable,
-    :respond_to?, :round, :send, :singleton_class, :singleton_method, :singleton_method_added, :singleton_methods, :size, :step,
-    :succ, :taint, :tainted?, :tap, :times, :to_c, :to_enum, :to_f, :to_i, :to_int, :to_r, :to_s, :truncate, :trust, :untaint,
-    :untrust, :untrusted?, :upto, :zero?, :|, :~]
+    [:!, :!=, :!~, :%, :&, :*, :**, :+, :+@, :-, :-@, :/, :<, :<<, :<=, :<=>, :==, :===, :=~, :>, :>=,
+     :>>, :[], :^, :__id__, :__send__, :abs, :abs2, :angle, :arg, :between?, :bit_length, :ceil, :chr,
+     :class, :clone, :coerce, :conj, :conjugate, :define_singleton_method, :denominator, :display, :div,
+     :divmod, :downto, :dup, :enum_for, :eql?, :equal?, :even?, :extend, :fdiv, :floor, :freeze, :frozen?,
+     :gcd, :gcdlcm, :hash, :i, :imag, :imaginary, :inspect, :instance_eval, :instance_exec, :instance_of?, :instance_variable_defined?, :instance_variable_get, :instance_variable_set, :instance_variables,
+     :integer?, :is_a?, :iterator, :itself, :kind_of?, :lcm, :magnitude, :method, :methods, :modulo,
+     :negative?, :next, :nil?, :nonzero?, :numerator, :object_id, :odd?, :ord, :phase, :polar, :positive?,
+     :pred, :private_methods, :protected_methods, :public_method, :public_methods, :public_send, :quo,
+     :rationalize, :real, :real?, :rect, :rectangular, :remainder, :remove_instance_variable, :respond_to?,
+     :round, :send, :singleton_class, :singleton_method, :singleton_method_added, :singleton_methods,
+     :size, :step, :succ, :taint, :tainted?, :tap, :times, :to_c, :to_enum, :to_f, :to_i, :to_int, :to_r,
+     :to_s, :truncate, :trust, :untaint, :untrust, :untrusted?, :upto, :zero?, :|, :~]
 
 Или отфильтровать при помощи метода `grep`
 
